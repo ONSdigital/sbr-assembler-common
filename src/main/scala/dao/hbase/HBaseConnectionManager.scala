@@ -9,8 +9,10 @@ object HBaseConnectionManager {
   val conf: Configuration = HBaseConfiguration.create()
 
   def withHbaseConnection(action: Connection => Unit): Unit = {
-    val hbConnection: Connection = ConnectionFactory.createConnection(conf)
-    action(hbConnection)
+
+    implicit val hbConnection: Connection = ConnectionFactory.createConnection(conf)
+
+    action
     hbConnection.close()
   }
 
