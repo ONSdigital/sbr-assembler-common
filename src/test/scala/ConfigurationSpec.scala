@@ -1,9 +1,11 @@
 
 import com.typesafe.config.ConfigException
-import config.Configuration
+import common.config.Configuration
 import org.scalatest._
 
 class ConfigurationSpec extends FlatSpec {
+
+  System.setProperty("simple-lib.whatever", "This value comes from a system property")
 
   behavior of "A Configuration system"
 
@@ -11,12 +13,8 @@ class ConfigurationSpec extends FlatSpec {
 
     assert (Configuration("Hive.DBName") == "registers")
     assert (Configuration("Hive.TableName") == "reg")
-  }
-
-  it should "throw ConfigException.Missing if an item is not found" in {
-    intercept[ConfigException.Missing] {
-      Configuration("item not found")
-    }
+    assert (Configuration("simple-lib.whatever") == "This value comes from a system property")
+    assert (Configuration("simple-lib.whateverxxx") == Configuration.NOT_FOUND)
   }
 
 }
