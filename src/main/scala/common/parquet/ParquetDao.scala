@@ -1,6 +1,6 @@
 package common.parquet
 
-import common.config.Configuration.ParquetPath
+import common.config.ONSConfiguration.ParquetPath
 import org.apache.spark.sql.SparkSession
 
 object ParquetDao extends Serializable {

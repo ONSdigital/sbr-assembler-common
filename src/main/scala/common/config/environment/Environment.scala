@@ -1,9 +1,9 @@
 package common.config.environment
 
-import common.config.Configuration
+import common.config.ONSConfiguration
 import org.apache.spark.sql.SparkSession
 
-abstract class Environment {
+abstract class Environment extends Serializable {
 
   def withSpark(appName: String, action: SparkSession => Unit): Unit = {
     val spark: SparkSession = getSparkSession(appName)
@@ -15,9 +15,9 @@ abstract class Environment {
 
 }
 
-object Environment {
+object Environment extends Serializable {
 
-  def isInCluster: Boolean = Configuration.ApplicationEnvironment == "cluster"
+  def isInCluster: Boolean = ONSConfiguration.ApplicationEnvironment == "cluster"
 
   def apply(): Environment = if (isInCluster) ClusterEnvironment else LocalEnvironment
 

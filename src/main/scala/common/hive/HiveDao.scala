@@ -1,6 +1,6 @@
 package common.hive
 
-import common.config.Configuration.{HiveDBName, HiveTablename}
+import common.config.ONSConfiguration.{HiveDBName, HiveTablename}
 import org.apache.spark.sql.{DataFrame, SparkSession}
 
 object HiveDao {

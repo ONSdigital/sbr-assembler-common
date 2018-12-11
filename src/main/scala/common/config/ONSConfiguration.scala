@@ -11,7 +11,7 @@ import com.typesafe.config._
   * @param config the configuration object. If none is provided, one will be created
   */
 
-object Configuration {
+object ONSConfiguration extends Serializable {
 
   private val config =  ConfigFactory.load()
 
@@ -36,8 +36,6 @@ object Configuration {
   lazy val HiveDBName: String = get("hive.DBName")
   lazy val HiveTablename: String = get("hive.TableName")
   lazy val ParquetPath: String = get("parquet.path")
-
-
 
 }
 
