@@ -6,7 +6,7 @@ import java.net.ConnectException
 import org.apache.curator.framework.{CuratorFramework, CuratorFrameworkFactory}
 import org.apache.curator.framework.recipes.atomic.{AtomicValue, DistributedAtomicLong}
 import org.apache.curator.retry.RetryOneTime
-import org.slf4j.LoggerFactory
+import org.apache.log4j.spi.LoggerFactory
 
 /**
   * Generates a unique common.sequence number for Hbase/Hive
@@ -29,9 +29,6 @@ class SequenceGenerator(
     connectionTimeoutSec * 1000, new RetryOneTime(1))
   private val dal: DistributedAtomicLong = new DistributedAtomicLong(client, path, new RetryOneTime(1))
 
-  private val logger = LoggerFactory.getLogger(classOf[SequenceGenerator])
-
-  logger.info(s"Starting SequenceGenerator: $hostName")
 
   client.start()
   client.getZookeeperClient.blockUntilConnectedOrTimedOut()

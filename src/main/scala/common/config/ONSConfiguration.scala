@@ -33,9 +33,6 @@ object ONSConfiguration extends Serializable {
 
   // Some common configuration items
   lazy val ApplicationEnvironment: String = get("app.environment")
-  lazy val HiveDBName: String = get("hive.DBName")
-  lazy val HiveTablename: String = get("hive.TableName")
-  lazy val ParquetPath: String = get("parquet.path")
 
 }
 

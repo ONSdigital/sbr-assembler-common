@@ -15,7 +15,6 @@ class TestSequenceGenerator extends FunSuite with Matchers {
     Console.out.println(s"Next Sequence Number: $nextSequence")
   }
 
-
   test("Performance figures") {
     val service: SequenceGenerator = SequenceGenerator.fromHost()
     testSpeed(service, 15000)
