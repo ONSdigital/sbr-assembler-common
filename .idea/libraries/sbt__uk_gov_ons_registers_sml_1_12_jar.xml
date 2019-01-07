@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: uk.gov.ons:registers-sml:1.12:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/uk.gov.ons/registers-sml/jars/registers-sml-1.12.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/uk.gov.ons/registers-sml/srcs/registers-sml-1.12-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalDependencies">
+    <plugin id="com.github.danielwegener.cucumber-scala" />
+    <plugin id="cucumber-java" />
+    <plugin id="gherkin" />
+    <plugin id="org.intellij.scala" />
+    <plugin id="org.jetbrains.idea.maven" />
+  </component>
+</project>

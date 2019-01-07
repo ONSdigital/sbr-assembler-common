@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: org.apache.crunch:crunch-core:0.15.0:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.crunch/crunch-core/jars/crunch-core-0.15.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.crunch/crunch-core/srcs/crunch-core-0.15.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

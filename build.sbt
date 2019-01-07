@@ -16,12 +16,20 @@ resolvers += "ClouderaRepo" at "https://repository.cloudera.com/artifactory/clou
 resolvers += Resolver.bintrayRepo("ons", "ONS-Registers")
 
 libraryDependencies ++= Seq(
+  "uk.gov.ons" % "registers-sml" % "1.12",
+
   "org.scalatest" %% "scalatest" % "3.0.5" % "test",
 
   "org.apache.spark" %% "spark-core" % Versions.spark,
   "org.apache.spark" %% "spark-sql" % Versions.spark,
+  ("org.apache.crunch" % "crunch-hbase" % "0.15.0")   .exclude("com.sun.jersey","jersey-server"),
+
+
   "org.apache.hbase" %  "hbase-client" % Versions.hbase,
   "org.apache.hbase" % "hbase-common" % Versions.hbase,
+  ("org.apache.hbase" % "hbase-server" % Versions.hbase)
+    .exclude("com.sun.jersey","jersey-server")
+    .exclude("org.mortbay.jetty","jsp-api-2.1"),
 
   "org.apache.zookeeper" % "zookeeper" % "3.4.5-cdh5.13.1",
 
@@ -34,3 +42,4 @@ libraryDependencies ++= Seq(
   "org.apache.curator" % "curator-test" % "4.0.1" % Test
 
 )
+dependencyOverrides += "com.google.guava" % "guava" % "12.0.1"
