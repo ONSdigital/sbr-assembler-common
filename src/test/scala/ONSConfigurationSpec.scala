@@ -1,7 +1,6 @@
 
-import com.typesafe.config.ConfigException
-import common.config.ONSConfiguration
 import org.scalatest._
+import util.configuration.Config
 
 class ONSConfigurationSpec extends FlatSpec {
 
@@ -11,10 +10,10 @@ class ONSConfigurationSpec extends FlatSpec {
 
   it should "return configuration items when requested" in {
 
-    assert (ONSConfiguration("Hive.DBName") == "registers")
-    assert (ONSConfiguration("Hive.TableName") == "reg")
-    assert (ONSConfiguration("simple-lib.whatever") == "This value comes from a system property")
-    assert (ONSConfiguration("simple-lib.whateverxxx") == ONSConfiguration.NOT_FOUND)
+    assert (Config("Hive.DBName") == "registers")
+    assert (Config("Hive.TableName") == "reg")
+    assert (Config("simple-lib.whatever") == "This value comes from a system property")
+    assert (Config("simple-lib.whateverxxx") == "simple-lib.whateverxxx: " + Config.NOT_FOUND)
   }
 
 }
